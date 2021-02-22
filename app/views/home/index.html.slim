@@ -1,0 +1,59 @@
+section
+  h1 View Components in the Wild
+
+section
+  h1 Great Intro
+
+  ul
+    li https://github.com/rails-oceania/melbourne-ruby/issues/158
+    li https://youtu.be/Lzsb-Q5Lm9g
+    li by Julián Pinzón - check out his github https://github.com/pinzonjulian
+
+section
+  h1 Fresho
+
+  ul
+    li Fresho food marketplace
+    li http://fresho.com
+    li we are hiring
+
+section
+  h1 Fresho architecture
+
+  ul
+    li monolith + web services
+    li ember + react + rails
+
+section
+
+  h1 Fresho + testing
+
+  ul
+    li we test everything 
+    li [DEMO] rails view testing 
+
+  pre.fragment: code.html
+    '
+      &lt;div>
+        &lt;label for="user_name">Name</label>
+        &lt;input type="text" id="user_name" />
+      &lt;/div>
+
+  pre.fragment: code.erb
+    '
+      <%= f.text_field :name %>
+
+section 
+
+  h1 Fresho + view components
+
+  pre.fragment: code.ruby
+    '
+      it "renders an email field" do
+        render
+        form_group = Capybara.string(rendered).find('div[data-testid="email"]')
+        expect(form_group.find("label").text).to eq "Email*"
+        expect(form_group.find("label")["for"]).to eq "signup_email"
+        expect(form_group.find("input")["id"]).to eq "signup_email"
+        expect(form_group.find("input")["name"]).to eq "signup[email]"
+      end

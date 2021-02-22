@@ -8,6 +8,9 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+window.Reveal = require("reveal.js/dist/reveal.js");
+window.Markdown = require("reveal.js/plugin/markdown/markdown.esm.js");
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

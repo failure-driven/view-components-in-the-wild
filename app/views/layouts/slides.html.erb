@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Fragmented Playground</title>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'reveal.js/css/reveal', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'reveal.js/css/theme/source/moon', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'highlightjs/styles/default.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'highlightjs/styles/monokai_sublime.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <%= yield %>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    let deck = new Reveal({
+      width: '100%',
+      height: '100%',
+      margin: 0.05,
+      history: true,
+      center: false,
+      dependencies: [{
+        src: `<%= Webpacker.manifest.lookup!("highlightjs.js") %>`,
+        async: true,
+      }],
+    });
+    deck.initialize();
+  </script>
+</body>
+
+</html>
