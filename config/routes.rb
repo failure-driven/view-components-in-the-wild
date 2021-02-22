@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get :plain_old_rails
     end
   end
+  resources :presentations, only: %i[index]
 
   root 'home#index'
 end
