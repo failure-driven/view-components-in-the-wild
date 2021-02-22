@@ -7,10 +7,38 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">View Components in the Wild</a>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to "presentation", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "demos", demo_path, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+      <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarContent"
+          aria-controls="navbarToggleContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <main class="container-fluid">
+      <%= flash_messages %>
+      <%= yield %>
+    </main>
   </body>
 </html>
