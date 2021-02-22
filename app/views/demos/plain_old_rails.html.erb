@@ -1,9 +1,11 @@
-<div class="row">
-  <div class="col-md-6 offset-md-3 mt-5">
-    <div class="card mb-3">
-      <div class="card-body">
-        hello
+<%= render(ExampleComponent.new(title: "Plain Old Rrails")) do %>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card mb-3">
+        <div class="card-body">
+            hello
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
