@@ -5,3 +5,14 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 
 @import "~bootstrap/scss/bootstrap";
 
+.field {
+  @extend .form-group;
+  input {
+    @extend .form-control;
+  }
+}
+
+#error_explanation {
+  @extend .invalid-feedback;
+  display: inherit;
+}
