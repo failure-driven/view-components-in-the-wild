@@ -1,0 +1,45 @@
+<%= form_with(model: v2_user) do |form| %>
+  <% if v2_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(v2_user.errors.count, "error") %> prohibited this v2_user from being saved:</h2>
+
+      <ul>
+        <% v2_user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= button_tag(
+      type="submit",
+      class: "btn btn-primary btn-block",
+      data: {
+        "disable-with": '<i class="fa fa-spinner fa-spin"></i>',
+      },
+    ) do %>
+      <i class="fa fa-play"></i> <%= @v2_user.persisted? ? "Update" : "Create" %> V2 user
+    <% end %>
+  </div>
+<% end %>

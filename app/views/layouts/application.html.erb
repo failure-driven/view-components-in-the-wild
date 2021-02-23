@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ViewComponentsInTheWild</title>
+    <title>
+      <%= content_for?(:page_title) ?
+        yield(:page_title) :
+        "ViewComponentsInTheWild" %>
+    </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>

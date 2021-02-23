@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>V2 Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @v2_users.each do |v2_user| %>
+      <tr>
+        <td><%= v2_user.name %></td>
+        <td><%= v2_user.email %></td>
+        <td><%= v2_user.age %></td>
+        <td><%= v2_user.password %></td>
+        <td><%= link_to 'Show', v2_user %></td>
+        <td><%= link_to 'Edit', edit_v2_user_path(v2_user) %></td>
+        <td><%= link_to 'Destroy', v2_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New V2 User', new_v2_user_path %>
