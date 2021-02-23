@@ -1,0 +1,9 @@
+<div id="error_explanation">
+  <h2><%= @title %></h2>
+
+  <ul>
+    <% errors.each do |error| %>
+      <li><%= error.text %></li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,9 @@
+<%= button_tag(
+  type="submit",
+  class: "btn btn-primary btn-block",
+  data: {
+    "disable-with": '<i class="fa fa-spinner fa-spin"></i>',
+  },
+) do %>
+  <i class="fa fa-play"></i> <%= text %>
+<% end %>

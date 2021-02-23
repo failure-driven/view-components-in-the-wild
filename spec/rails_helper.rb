@@ -67,4 +67,7 @@ RSpec.configure do |config|
 
   # Model helper to help stub models
   config.include ModelHelper, type: :view
+  config.include ModelHelper, type: :component
+
+  config.include ViewComponent::TestHelpers, type: :component
 end

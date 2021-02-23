@@ -1,0 +1,14 @@
+<%= render Layout::CardLayout::CardLayoutComponent.new do |card_layout| %>
+  <% card_layout.header do %>
+    featured
+  <% end %>
+  <% card_layout.body_title do %>
+    New V3 User
+  <% end %>
+
+  <%= render Features::V3UserForm::V3UserFormComponent.new(v3_user: @v3_user) %>
+
+  <% card_layout.footer do %>
+    <%= link_to 'Back', v3_users_path %>
+  <% end %>
+<% end %>

@@ -1,0 +1,22 @@
+<%= form_with(model: @v3_user) do |form| %>
+  <% if @v3_user.errors.any? %>
+    <%= render(Forms::Error::ErrorComponent.new(
+      title: "#{pluralize(@v3_user.errors.count, "error")} prohibited this v3_user from being saved:"
+    )) do |error_component| %>
+      <% error_component.errors(@v3_user.errors.map{|e| {text: e.full_message}}) %>
+    <% end %>
+  <% end %>
+
+  <%= render(Forms::Field::FieldComponent.new(form: form, name: :name)) %>
+  <%= render(Forms::Field::FieldComponent.new(form: form, name: :email, field_type: :email_field)) %>
+  <%= render(Forms::Field::FieldComponent.new(form: form, name: :age)) %>
+  <%= render(Forms::Field::FieldComponent.new(form: form, name: :password, field_type: :password_field)) %>
+
+  <div class="actions">
+    <%= render(Forms::Submit::SubmitComponent.new()) do |submit| %>
+      <% submit.text do %>
+        <%= @v3_user.persisted? ? "Update" : "Create" %> V3 user
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,4 @@
+<div class="form-group">
+  <%= @form.label @name %>
+  <%= @form.public_send(@field_type, @name, class: "form-control") %>
+</div>

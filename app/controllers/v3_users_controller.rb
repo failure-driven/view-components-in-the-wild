@@ -21,6 +21,7 @@ class V3UsersController < ApplicationController
 
   # POST /v3_users or /v3_users.json
   def create
+    sleep(1)
     @v3_user = V3User.new(v3_user_params)
 
     respond_to do |format|
@@ -36,6 +37,7 @@ class V3UsersController < ApplicationController
 
   # PATCH/PUT /v3_users/1 or /v3_users/1.json
   def update
+    sleep(1)
     respond_to do |format|
       if @v3_user.update(v3_user_params)
         format.html { redirect_to @v3_user, notice: "V3 user was successfully updated." }

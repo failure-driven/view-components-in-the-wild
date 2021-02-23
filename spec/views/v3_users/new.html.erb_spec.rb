@@ -13,7 +13,7 @@ describe "v3_users/new", type: :view do
   it "renders a page heading" do
     render
     h1_heading = Capybara.string(rendered).find("h1")
-    expect(h1_heading.text).to eq "New V3 User"
+    expect(h1_heading.text.strip).to eq "New V3 User"
   end
 
   it "renders a form to create a user" do
