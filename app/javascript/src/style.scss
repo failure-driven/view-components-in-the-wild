@@ -15,4 +15,11 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 #error_explanation {
   @extend .invalid-feedback;
   display: inherit;
+  @extend .alert;
+  @extend .alert-danger;
+}
+
+#notice {
+  @extend .alert;
+  @extend .alert-info;
 }

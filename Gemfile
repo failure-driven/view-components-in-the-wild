@@ -35,8 +35,17 @@ gem "view_component", require: "view_component/engine"
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :test do
-  gem "capybara"
   gem "rspec-rails"
+
+  gem "rspec-example_steps"
+  gem "rspec-rails"
+  gem "rspec-wait"
+
+  gem "rexml"
+  gem "capybara"
+  gem "capybara-screenshot"
+  gem "selenium-webdriver"
+  gem "webdrivers"
 
   gem "pry"
   gem "pry-rails"
