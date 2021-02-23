@@ -1,0 +1,22 @@
+<% content_for :page_title do %>
+  New V3 User
+<% end %>
+
+<div class="row mt-5">
+  <div class="col-md-6 offset-md-3">
+    <div class="card mb-3">
+      <div class="card-header">
+        featured
+      </div>
+      <div class="card-body">
+        <h1 class="card-title">New V3 User</h1>
+        <div class="card-text">
+          <%= render 'form', v3_user: @v3_user %>
+        </div>
+      </div>
+      <div class="card-footer">
+        <%= link_to 'Back', v3_users_path %>
+      </div>
+    </div>
+  </div>
+</div>

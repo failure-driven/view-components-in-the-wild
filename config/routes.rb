@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :v3_users
   resources :users
   resources :v2_users
   resource :demo, only: %i[show] do

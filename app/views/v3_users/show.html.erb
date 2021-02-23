@@ -1,0 +1,22 @@
+<p>
+  <strong>Name:</strong>
+  <%= @v3_user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @v3_user.email %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @v3_user.age %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @v3_user.password %>
+</p>
+
+<%= link_to 'Edit', edit_v3_user_path(@v3_user) %> |
+<%= link_to 'Back', v3_users_path %>

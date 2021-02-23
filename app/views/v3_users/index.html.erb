@@ -1,0 +1,31 @@
+<h1>V3 Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @v3_users.each do |v3_user| %>
+      <tr>
+        <td><%= v3_user.name %></td>
+        <td><%= v3_user.email %></td>
+        <td><%= v3_user.age %></td>
+        <td><%= v3_user.password %></td>
+        <td><%= link_to 'Show', v3_user %></td>
+        <td><%= link_to 'Edit', edit_v3_user_path(v3_user) %></td>
+        <td><%= link_to 'Destroy', v3_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New V3 User', new_v3_user_path %>
